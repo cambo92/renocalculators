@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Renovation Calculators</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <h1>Renovation Calculators</h1>
+
+    <a href="paint"
+      >Paint<br />
+      <img
+        src="{% static 'images/paint.jpg' %}"
+        alt="Plaster"
+        class="tool-icon"
+      /> </a
+    ><br />
+
+    <a href="flooring"
+      >Flooring<br />
+      <img
+        src="{% static 'images/flooring.jpg' %}"
+        alt="Plaster"
+        class="tool-icon"
+      /> </a
+    ><br />
+
+    <a href="plaster"
+      >Plaster<br />
+      <img
+        src="{% static 'images/plaster.png' %}"
+        alt="Plaster"
+        class="tool-icon"
+      /> </a
+    ><br />
+  </body>
+</html>

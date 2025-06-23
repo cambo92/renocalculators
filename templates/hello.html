@@ -1,0 +1,29 @@
+<h1>Renovation Calculator</h1>
+
+<h3>Paint calculator</h3>
+<form method="post">
+  {% csrf_token %} {{ form_wall_paint.as_p }}
+  <button type="submit">Calculate</button>
+</form>
+
+{% if litres_needed is not None %}
+<h2>Amount of paint needed: {{ litres_needed }}L</h2>
+{% endif %} {% if cost_wall_paint is not None %}
+<h2>Cost: ${{ cost_wall_paint }}</h2>
+{% endif %}
+
+<h3>Flooring calculator</h3>
+<form method="post">
+  {% csrf_token %} {{form_flooring.as_p}}
+  <button type="submit">Calculate</button>
+</form>
+
+{% if sq_m is not None %}
+<h2>Amount of flooring needed: {{sq_m}}m<sup>2</sup></h2>
+{%endif%} {%if cost_flooring is not None%}
+<h2>Cost: ${{cost_flooring}}</h2>
+{%endif%}
+
+<h3>Weatherboard calculator</h3>
+
+<h3>Roofing calculator</h3>

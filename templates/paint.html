@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Renovation Calculators</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <h1>Renovation Calculators</h1>
+
+    <div class="centre">
+      <h3>Paint calculator</h3>
+      <form method="post">
+        {% csrf_token %} {{ form_wall_paint.as_p }}
+        <button type="submit">Calculate</button>
+      </form>
+
+      {% if litres_needed is not None %}
+      <h2 class="paint-needed">Amount of paint needed: {{ litres_needed }}L</h2>
+      {% endif %} {% if cost_wall_paint is not None %}
+      <h2 class="paint-needed">{{ cost_wall_paint }}</h2>
+      {% endif %}
+
+      <p>
+        This is just an estimate. We aim to update prices every day. Prices
+        between locations and stores may vary
+      </p>
+    </div>
+
+    <a href="index">Back</a>
+  </body>
+</html>
